@@ -1,0 +1,9 @@
+#killers$White<-factor(killers$White,
+#                      levels = c(TRUE,FALSE),
+#                      labels=c("White","Non-White"))
+#killers$ConvictedPerVictim<-killers$Convicted/killers$Vics
+killers$Adult<-killers$AgeFirst>=18
+killers$Adult<-factor(killers$Adult,
+                      levels = c(TRUE,FALSE),
+                      labels=c("Adult","Child"))
+boxplot(Convicted ~ Adult, data = killers)
